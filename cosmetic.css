@@ -1,0 +1,51 @@
+.news, .home{
+    margin-left: 15px;
+    font-size: 25px;
+    border-radius: 5%;
+    border-style: inset;
+    border-width: medium;
+    color: red;
+    background-color: darkorange;
+    font-family: cursive;
+    border-color: dodgerblue;
+}
+
+.navbar{
+    border-radius: 2%;
+    border-width: medium;
+    border-style: outset;
+    border-color: cornflowerblue;
+    margin-top: 10px;
+    height: 35px;
+}
+
+.form-control{
+    margin-left: 350px;
+    border-color: dodgerblue;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.btn-outline-success{
+    background-color: red;
+    font-size: 15px;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.navbar-brand {
+    font-family: cursive;
+}
+
+.CPrice {
+    margin-left: 50%;
+}
+
+.btn-c {
+    margin-left: 20px;
+}
+
+.thumbnail {
+    border-color: dodgerblue;
+}
+
