@@ -1,0 +1,107 @@
+
+#rightSide{
+    position:fixed;
+    right:0;
+    top:0;
+    heigth:100%;
+    background-color: darkred;
+    display: inline-block;
+    width:36%;
+    float:right;
+    height:600px;
+    border:2px solid red;
+}
+
+#leftSide{
+    display: inline-block;
+    background-color: darkgoldenrod;
+     width:60%;
+    float:left;
+    height:600px;
+    min-width: 500px;
+    border:2px solid red;
+}
+
+
+@media (max-width: 835px) {
+    #rightSide{
+        display: none;
+    }
+    #leftSide{
+        width:100%;
+    }
+}
+
+.button{
+    width:100px;
+    height:50px;
+}
+#screen{
+    width:100%;
+    height:600px;
+    background-color: darkcyan;
+}
+#clock{
+    background-color: coral;
+    width:100px;
+    height:auto;
+    text-align: center;
+    border:2px solid red;
+    font-size: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 6px;
+
+}
+table {
+    border-collapse: collapse;
+}
+
+td,
+th {
+    border: 1px solid black;
+    padding: 3px;
+    text-align: center;
+    background-color: coral;
+}
+
+th {
+    font-weight: bold;
+    background-color: darkred;
+}
+#calendar{
+    margin-left:200px;
+    display: inline-block;
+}
+#calendar2{
+    margin-left: 5px;
+    margin-bottom: -5px;
+    width:auto;
+    height:auto;
+    padding:10px;
+    background-color: darkred;
+    display: inline-block;
+}
+ .buttonRight{
+    position:absolute;
+    right:0;
+    width:10px;
+    height:100%;
+    display: inline-block;
+}
+.buttonLeft{
+    position:absolute;
+    left:0;
+    width:10px;
+    height:100%;
+    display: inline-block;
+}
+
+.fullCalend{
+    position:relative;
+    width:200px;
+    height: auto;
+    background-color: coral;
+}
+
+

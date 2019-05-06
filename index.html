@@ -5,6 +5,8 @@
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="cosmetic.css" />
+    <script src="jquery-3.3.1.min.js"></script>
+    <script src="anime.js"></script>
 
 </head>
 <body>
@@ -12,7 +14,7 @@
         <div class = "navbar ">
                 <a class="navbar-brand" >Навігація </a>
                             <button class="nav-link home" href="#">Головна <span class="sr-only">(current)</span></button>
-                            <button class="nav-link news" href="#" tabindex="-1" aria-disabled="true">Новини</button>
+                            <button class="nav-link news" href="file:///C:/Users/Newermind/Desktop/GamesStore/OrderMenu/Order.html" tabindex="-1" aria-disabled="true">Новини</button>
                     <span    class="form-inline my-2 my-lg-0">
                         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
                         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
@@ -21,9 +23,11 @@
         <div class = "goods col-md-10">
             <div class="col-sm-6 col-md-4">
                 <div class="thumbnail game-card">
-                    <img src="game_1.jpg">
-
-                    <div class="caption"><h3>Devil May Cry 5</h3>
+                    <div class = "main-img">
+                        <img src="game_1.jpg">
+                    </div>
+                    <div class="caption">
+                        <span class = "name">Devil May Cry 5</span>
 
                         <p>Екшн, Слешер, Single Player</p>
 
@@ -38,9 +42,11 @@
             </div>
             <div class="col-sm-6 col-md-4">
                 <div class="thumbnail game-card">
-                    <img src="game_2.jpg">
-
-                    <div class="caption"><h3>Sekiro: Shadows Die Twice</h3>
+                    <div class = "main-img">
+                        <img src="game_2.jpg">
+                    </div>
+                    <div class="caption">
+                        <span class = "name">Sekiro: Shadows Die Twice</span>
 
                         <p>Екшн, Слешер, Single Player</p>
 
@@ -55,9 +61,11 @@
             </div>
             <div class="col-sm-6 col-md-4">
                 <div class="thumbnail game-card">
-                    <img src="game_3.jpg">
-
-                    <div class="caption"><h3>Assassin`s Creed : Odyssey</h3>
+                    <div class = "main-img">
+                        <img src="game_3.jpg">
+                    </div>
+                    <div class="caption">
+                        <span class="name">Assassin`s Creed : Odyssey</span>
 
                         <p>Екшн, Стелс, Single Player</p>
 
@@ -72,9 +80,12 @@
             </div>
             <div class="col-sm-6 col-md-4">
                 <div class="thumbnail game-card">
+                    <div class = "main-img">
                     <img src="game_4.jpg">
+                    </div>
 
-                    <div class="caption"><h3>Mortal Combat 11</h3>
+                    <div class="caption">
+                        <span class = "name">Mortal Combat 11</span>
 
                         <p>Файтинг, Слешер, Single Player, Multiplayer</p>
 
@@ -88,6 +99,28 @@
                 </div>
             </div>
         </div>
+        <div class = "bin col-md-2">
+            <div class = "summary">
+                <p>
+                    Сума Замовлення
+                    <span id="sumPrice">0</span>
+                    грн
+                    <button class = "btn btn-primary btn-order">Замовити</button>
+                </p>
+            </div>
+            <div id = "toBeCloned" class = bin-item>
+                <div class = "side-img">
+                    <img src="game_1.jpg">
+                </div>
+                <p class = rname>DMC 5</p>
+                <span class="rprice" ></span>
+                грн
+                <button class = minus>-</button>
+                <input class = inp value = "1">
+                <button class = "plus">+</button>
+                <button class = "remove">X</button>
+            </div>
+
         </div>
     </div>
 </body>
