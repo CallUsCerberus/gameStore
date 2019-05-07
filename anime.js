@@ -113,6 +113,20 @@ $(document).ready(function(){
         window.location.href='http://localhost:63342/GamesStore/Гайм%20шоп/News.html?_ijt=8glf1bpju3hm35efnm60e625o6';
     });
 
+    $(".All").click(function(){
+        $(".thumbnail").css("visibility", "visible");
+    });
+    $(".f").click(function(){
+        $(".thumbnail").css("visibility", "hidden");
+        $(".thumbnail").css("position", "absolute");
+
+        var filter = $(this).html();
+        if($(".filterList:contains("+ filter +")")){
+            $(".filterList:contains("+ filter +")").parent().parent().css("visibility", "visible");
+            $(".filterList:contains("+ filter +")").parent().parent().css("position", "relative");
+        }
+    });
+
 
     $(".btn-pc").click(function(){
         var name = $(this).parent().parent().find(".name").text();
