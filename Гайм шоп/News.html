@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>News page</title>
+
+    <!-- Bootsrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+    <script src="jquery-3.3.1.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="NewsCSS.css" />
+   <script src="NewsJS.js"></script>
+
+</head>
+
+<body>
+<div class="container">
+    <div class = "navbar ">
+        <a class="navbar-brand" >Навігація </a>
+        <span class="nav-link home" href="#">Головна <span class="sr-only">(current)</span></span>
+        <span class="nav-link news" href="#" tabindex="-1" aria-disabled="true">Новини</span>
+        <span    class="form-inline my-2 my-lg-0">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                    </span>
+    </div>
+</div>
+
+
+<div class="col-sm-12 col-md-9">
+    <div class="row" id="news_list">
+        <div class="col-sm-6 col-md-3">
+            <div class="thumbnail news-card">
+                <img src="images/news76.jpg">
+                <div class="caption"><h4 class="bl-newsName">Бани у Fallout 76</h4>
+                    <h5>Екшн-РПГ, Fallout 76, Bethesda</h5>
+                    <p>Bethesda почала банити юзерів, котрі намагаються за рахунок різноманітних модифікацій зробити
+                        проведення часу у грі Fallout 76 більш приємним.
+                        </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6 col-md-3">
+            <div class="thumbnail news-card">
+                <img src="images/newsUnity.jpg">
+                <div class="caption"><h4 class="bl-newsName">Подарунок від Ubisoft</h4>
+                    <h5>Екшн-РПГ, Notre Dame, Assassin's Creed, Ubisoft</h5>
+                    <p><a href="https://register.ubisoft.com/acu-notredame-giveaway/en-GB">Роздача</a> Assassin’s Creed Unity — благородний жест з метою дати усім бажаючим можливість хоч в малій ступіні
+                        «відчути велич та красу Нотр-Дама»</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6 col-md-3">
+            <div class="thumbnail news-card">
+                <img src="images/newsSekir.jpg">
+                <div class="caption"><h4 class="bl-newsName">Перший вдалий спідран</h4>
+                    <h5>Екшн, РПГ, Sekiro, From Software</h5>
+                    <p>Нещодавно по грі Sekiro Shadows Die Twice завершився перший спідран. Зробив його LostFeather за
+                        39 хвилин 13 секунд. </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-md-3">
+            <div class="thumbnail news-card">
+                <img src="images/newsGova.jpg">
+                <div class="caption"><h4 class="bl-newsName">TES: Blades потопає у донаті</h4>
+                    <h5>Екшн, РПГ, The Elder Scrolls, Bethesda</h5>
+                    <p>Bethesda випустила патч для The Elder Scrolls: Blades, який порізав нагороди, які можна отримати з
+                    дешевих рундуків з речами.</p>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="col-sm-6 col-md-3">
+            <div class="thumbnail nNews-card">
+                <img src="images/game_2.jpg">
+                <div class="caption"><h4 class="bl-newsName">Знижка на Sekiro Shadows Die Twice</h4>
+                    <p>З 29 квітня по 9 травня на нашому сайті діє знижка на Sekiro Shadows Die Twice у розмірі 61%.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6 col-md-3">
+            <div class="thumbnail nNews-card">
+                <img src="images/game_4.jpg">
+                <div class="caption"><h4 class="bl-newsName">Знижка на Mortal Combat 11</h4>
+                    <p>З 1 травня по 10 травня на нашому сайті діє знижка на Mortal Combat 11 для PS4 у розмірі 61%.
+                       </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6 col-md-3">
+            <div class="thumbnail nNews-card">
+                <img src="images/game_1.jpg">
+                <div class="caption"><h4 class="bl-newsName">Знижка на Devil May Cry V</h4>
+                    <p>З 9 травня по 19 травня на нашому сайті планується знижка на Devil May Cry V у розмірі 61%.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6 col-md-3">
+            <div class="thumbnail nNews-card">
+                <img src="images/game_3.jpg">
+                <div class="caption"><h4 class="bl-pizzaName">Знижка на Assassin's Creed Odissey</h4>
+                    <p>З 20 травня по 30 травня на нашому сайті планується знижка на Assassin's Creed Odissey
+                        у розмірі 61%.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class = "bin-1 col-md-2">
+    <div id = "toBeCloned" class = bin-item>
+        <div class = "side-img">
+            <img src="images/game_1.jpg">
+        </div>
+        <p class = rname>DMC 5</p>
+        <span class="rprice" ></span>
+        грн
+        <button class = minus>-</button>
+        <input class = inp value = "1">
+        <button class = "plus">+</button>
+        <button class = "remove">X</button>
+    </div>
+</div>
+
+
+</body>
+
+</html>

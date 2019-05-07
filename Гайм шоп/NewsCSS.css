@@ -1,13 +1,11 @@
-
 .news, .home{
     margin-left: 15px;
-    font-size: 25px;
+    font-size: 30px;
     border-radius: 5%;
     border-style: inset;
     border-width: medium;
     color: red;
-    background-color: darkorange;
-    font-family: cursive;
+    background-color: cornflowerblue;
     border-color: dodgerblue;
 }
 
@@ -17,7 +15,7 @@
     border-style: outset;
     border-color: cornflowerblue;
     margin-top: 10px;
-    height: 35px;
+    height: 30px;
 }
 
 .form-control{
@@ -38,24 +36,8 @@
     font-family: cursive;
 }
 
-.main-img {
-    width: 270px;
-    position: relative;
-}
-.main-img img {
-    max-width: 100%;
-    max-height: 100%;
-}
-.CPrice {
-    margin-left: 50%;
-}
-
-.btn-c {
-    margin-left: 20px;
-}
-
-.thumbnail {
-    border-color: dodgerblue;
+.col-md-9 {
+    text-align: center;
 }
 
 .bin-item{
@@ -66,7 +48,7 @@
 .col-md-2 {
     position: absolute;
     right: 0px;
-    width: 25%;
+    width: 23%;
 }
 .minus {
     margin-left: 2%;
@@ -126,7 +108,7 @@
 
 .side-img {
     position: absolute;
-    right: -15px;
+    right: 0;
     height: 110px;
 }
 
@@ -135,22 +117,16 @@
     max-height: 100%;
 }
 
-.btn-order {
-    margin-left: 20px;
+.news-card{
+    position: relative;
+    visibility: visible;
 }
 
-.summary {
-    border-bottom-style: double;
+.nNews-card {
+    position: absolute;
 }
 
 #toBeCloned {
-    margin-top: 5px;
+    position: absolute;
     visibility: hidden;
-    position: absolute;
-}
-
-.filters {
-    position: absolute;
-    left:0px;
-    width: 5%;
 }

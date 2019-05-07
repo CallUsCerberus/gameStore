@@ -1,3 +1,95 @@
+#sendNumber{
+    position: absolute;
+    bottom:10px;
+    left:160px;
+    border:none;
+    border-radius: 5px;
+    background-color: chocolate;
+
+
+}
+#inputName5{
+    position: absolute;
+    top:110px;
+    left:70px;
+}
+.quest{
+    width:100%;
+    height:30px;
+    text-align: center;
+    font-size: 20px;
+    color:black;
+    margin-bottom: 15px;
+}
+#timeToTheGame{
+    width:200px;
+    height:35px;
+    position: absolute;
+    right:10px;
+    top:30px;
+    border:1px solid darkred;
+    text-align: center;
+    border-radius: 5px;
+}
+.adr{
+    display: block;
+}
+#googleCart{
+    width:100%;
+    height:500px;
+    background-color: #51EC5B;
+}
+.news, .home{
+    margin-left: 15px;
+    font-size: 30px;
+    border-radius: 5%;
+    border-style: inset;
+    border-width: medium;
+    color: red;
+    background-color: cornflowerblue;
+    border-color: dodgerblue;
+}
+
+.navbar{
+    border-radius: 2%;
+    border-width: medium;
+    border-style: outset;
+    border-color: cornflowerblue;
+    margin-top: 10px;
+    height: 30px;
+}
+#toBeCloned{
+    visibility: hidden;
+    position: absolute;
+}
+
+#finalSum{
+    width:100%;
+    height:30px;
+    position:absolute;
+    bottom:60px;
+    right:0;
+    text-align: center;
+    font-size: 20px;
+}
+
+.form-control{
+    margin-left: 350px;
+    border-color: dodgerblue;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.btn-outline-success{
+    background-color: red;
+    font-size: 15px;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.navbar-brand {
+    font-family: cursive;
+}
 .hint{
     position: absolute;
     left:15px;
@@ -21,7 +113,7 @@
     position: absolute;
     left:15px;
     top:30px;
-    width:175px;
+    width:185px;
     height:35px;
     border:1px solid darkcyan;
     border-radius: 3px;
@@ -33,13 +125,20 @@
     position: relative;
 }
 #help{
+    transition: all 1.2s ease-in-out;
+    opacity: 0.9;
+    border-top-left-radius: 7px;
     z-index: 2;
     position: fixed;
     right:0;
-    bottom:0;
+    bottom:-150px;
     width:400px;
     height:200px;
     background-color: forestgreen;
+}
+#help:hover{
+    bottom:0;
+
 }
 
 #rightSide{
@@ -60,7 +159,7 @@
     background-color: darkgoldenrod;
      width:70%;
     float:left;
-    height:650px;
+    height:auto;
     min-width: 500px;
     border:2px solid red;
 }

@@ -1,13 +1,12 @@
-var pricesArray = [1200, 1500, 900, 1050, 650, 850, 1000, 1300];
-var amountArray = [0, 0, 0, 0, 0, 0, 0, 0];
-var namesArray = ["Devil May Cry 5(ПК)", "Devil May Cry 5(Консоль)", "Sekiro: Shadows Die Twice(ПК)",
-   "Sekiro: Shadows Die Twice(Консоль)", "Assassin`s Creed : Odyssey(ПК)", "Assassin`s Creed : Odyssey(Консоль)",
-   "Mortal Combat 11(ПК)", "Mortal Combat 11(Консоль)"
-];
-var srcArray = [$(".img-1").html(), $(".img-2").html(), $(".img-3").html(), $(".img-4").html()];
 $(function () {
-   var price = localStorage.getItem("sumPrice");
-   alert(price);
+   var pricesArray = [1200, 1500, 900, 1050, 650, 850, 1000, 1300];
+   var amountArray = [0, 0, 0, 0, 0, 0, 0, 0];
+   var namesArray = ["Devil May Cry 5(ПК)", "Devil May Cry 5(Консоль)", "Sekiro: Shadows Die Twice(ПК)",
+      "Sekiro: Shadows Die Twice(Консоль)", "Assassin`s Creed : Odyssey(ПК)", "Assassin`s Creed : Odyssey(Консоль)",
+      "Mortal Combat 11(ПК)", "Mortal Combat 11(Консоль)"
+   ];
+   var srcArray = [$(".img-1").html(), $(".img-2").html(), $(".img-3").html(), $(".img-4").html()];
+
    if(localStorage.length!=0){
       if(Number(localStorage.getItem(namesArray[0]))!=0){
          var img = $(".img-1").html();
@@ -91,14 +90,47 @@ $(function () {
       }
    }
 
+   $("#finalSum").html(localStorage.getItem("sumPrice"));
+
+   $(".home").click(function(){
+      window.location.href='http://localhost:63342/GamesStore/index.html?_ijt=1li6h3kquoi526a843ub59ncam#';
+   });
+
+   $(".news").click(function(){
+      window.location.href='http://localhost:63342/GamesStore/Гайм%20шоп/News.html?_ijt=8glf1bpju3hm35efnm60e625o6';
+   });
+
+
 
    var todaysDate=new Date();
    var currentDate=new Date();
    startTime();
    createCalendar('calendar2', new Date());
+   var amount =0;
+
+   if(localStorage.getItem("am")){
+      amount = localStorage.getItem("am");
+   }
+
+
+   ///////////
+   var numbers=[];
+   for(var c=0; c<localStorage.getItem("am"); c++)
+      numbers.push(localStorage.getItem(c));
+   if(numbers[0]!=null)
+   for(var c=0; c<numbers.length; c++)
+      alert(numbers[c]);
+   ////////////
+
+
+
 
    $("#name").hide();
    $("#name2").hide();
+   $("#name3").hide();
+   $("#name4").hide();
+   $("#sendNumber").hide();
+
 
    $(".buttonLeft").click(function () {
       currentDate.setMonth(currentDate.getMonth()+1);
@@ -111,7 +143,6 @@ $(function () {
 
    $("#inputName").keyup(function () {
       var text = $("#inputName").val();
-      alert(text);
       if (text.charAt(text.length-1)!=" ") {
          if (!(text.charAt(text.length - 1) >= 'А' && text.charAt(text.length - 1) <= 'я')) {
             $("#inputName").css("backgroundColor", "lightcoral");
@@ -127,7 +158,6 @@ $(function () {
    });
    $("#inputName2").keyup(function () {
       var text = $("#inputName2").val();
-      alert(text);
       if (text.charAt(text.length-1)!=" ") {
          if (!(text.charAt(text.length - 1) >= 'А' && text.charAt(text.length - 1) <= 'я')) {
             $("#inputName2").css("backgroundColor", "lightcoral");
@@ -142,9 +172,218 @@ $(function () {
 
    });
 
+   $("#inputName3").keyup(function () {
+      var text = $("#inputName3").val();
+     for(var i=0; i<text.length; i++){
+       if(text.charAt(i)=='@'){
+          $("#name3").hide();
+          $("#inputName3").css("backgroundColor", "lightgreen");
+
+          return;
+       }
+     }
+      $("#name3").show();
+      $("#inputName3").css("backgroundColor", "lightcoral");
+
+   });
+
+   $("#inputName4").keyup(function () {
+      var text =  $("#inputName4").val();
+
+
+      if ((text.length == 10 && text.charAt(0) == '0')) {
+         var correct = true;
+         for (var c = 0; c < text.length; c++)
+            if (text.charAt(c) < 0 || text.charAt(c) > 9)
+               correct = false;
+         if(correct)
+            $("#inputName4").css("backgroundColor", "lightgreen");
+      } else if ((text.length == 13 && text.charAt(0) == '+')) {
+         var correct = true;
+         for (var c = 0; c < text.length; c++)
+            if (text.charAt(c) < 0 || text.charAt(c) > 9)
+               correct = false;
+         if(correct)
+            $("#inputName4").css("backgroundColor", "lightgreen");
+         $("#name4").hide();
+      }
+      else{
+         $("#inputName4").css("backgroundColor", "lightcoral");
+         $("#name4").show();
+      }
+
+   });
+
+
+
+
+   $("#inputName5").keyup(function () {
+      var text =  $("#inputName5").val();
+
+
+      if ((text.length == 10 && text.charAt(0) == '0')) {
+         var correct = true;
+         for (var c = 0; c < text.length; c++)
+            if (text.charAt(c) < 0 || text.charAt(c) > 9)
+               correct = false;
+         if(correct) {
+            $("#inputName5").css("backgroundColor", "lightgreen");
+            $("#sendNumber").show();
+         }
+      } else if ((text.length == 13 && text.charAt(0) == '+')) {
+         var correct = true;
+         for (var c = 1; c < text.length; c++)
+            if (text.charAt(c) < 0 || text.charAt(c) > 9)
+               correct = false;
+         if(correct)
+            $("#inputName5").css("backgroundColor", "lightgreen");
+         $("#sendNumber").show();
+      }
+      else{
+         $("#inputName5").css("backgroundColor", "lightcoral");
+      }
+
+   });
+   $("#sendNumber").click(function () {
+      localStorage.setItem("am", amount+1);
+      localStorage.setItem(amount++,  $("#inputName5").val());
+      alert("we will call you soon");
+   });
+
+
+   var currentPoint;
+   var cond=1;
+   var point, point2, point3;
+   $("#Choice1").click();
+   $("#Choice1").click(function () {
+    cond=1;
+   });
+   $("#Choice2").click(function () {
+      cond=2;
+   });
+   $("#Choice3").click(function () {
+      cond=3;
+   });
+
 
 
    ///////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+   function	initialize()	{
+//Тут починаємо працювати з картою
+      var mapProp =	{
+         center:	new	google.maps.LatLng(50.464379,30.519131),
+         zoom:	10
+      };
+      var map=new google.maps.Map(document.getElementById("#googleCart"), mapProp);
+      point	=	new	google.maps.LatLng(50.464379,30.519131);
+      point2	=	new	google.maps.LatLng(48.13296993,30.88080883);
+      point3=new	google.maps.LatLng(47.50359592,35.40115362);
+      var marker	=	new	google.maps.Marker({
+         position:	point,
+         map:	map
+      });
+      var marker2	=	new	google.maps.Marker({
+         position:	point2,
+         map:	map
+      });
+      var marker3	=	new	google.maps.Marker({
+         position:	point3,
+         map:	map
+      });
+      var directionsDisplay = new google.maps.DirectionsRenderer();
+      directionsDisplay.setMap(map);
+      function	geocodeLatLng(latlng,	 callback){
+         //Модуль за роботу з адресою
+         var geocoder	=	new	google.maps.Geocoder();
+         geocoder.geocode({'location':	latlng},	function(results,	status)	{
+            if	(status	===	google.maps.GeocoderStatus.OK&&	results[1])	{
+               var adress =	results[1].formatted_address;
+               callback(null,	adress);
+            }	else	{
+               callback(new	Error("Can't	find	adress"));
+            }
+         });
+      }
+
+
+
+      function	calculateRoute(A_latlng,	 B_latlng,	callback)	{
+         var directionService =	new	google.maps.DirectionsService();
+         directionService.route({
+            origin:	A_latlng,
+            destination:	B_latlng,
+            travelMode:	google.maps.TravelMode["DRIVING"]
+         },	function(response,	status)	{
+            if	(	status	==	google.maps.DirectionsStatus.OK )	{
+               directionsDisplay.setDirections(response);
+               var leg	=	response.routes[	0	].legs[	0	];
+               callback(null,	{
+                  duration:	leg.duration
+               });
+            }	else	{
+               callback(new	Error("Can'	not	find	direction"));
+            }
+         });
+      }
+
+
+
+      var markern;
+      var pointn;
+
+
+      google.maps.event.addListener(map, 'click',function(me){
+         var coordinates	=	me.latLng;
+
+         geocodeLatLng(coordinates,	function(err,	adress){
+            if(!err)	{
+               $('#place').text(adress);
+               $("#addr").val(adress);
+               if(markern) {
+                  markern.setMap(null);
+               }
+               pointn	=	new	google.maps.LatLng(coordinates.lat(),coordinates.lng());
+
+               markern	=	new	google.maps.Marker({
+                  position:	pointn,
+                  map:	map
+               });
+              if(cond==1)
+                 currentPoint=point;
+               else if(cond==2)
+                  currentPoint=point2;
+              else if(cond==3)
+                 currentPoint=point3;
+               calculateRoute(currentPoint, pointn, function (err,duration) {
+                  // debugger
+                  if(!err){
+                    $("#timeToTheGame").text("times remaining:"+duration.duration.text);
+                  }
+               });
+
+
+            }	else	{
+               alert("Немає адреси")
+            }
+         })
+      });
+   };
+   google.maps.event.addDomListener(window,'load',initialize);
+
+
+
+
+
+
+
+
+
 
 
    function startTime()

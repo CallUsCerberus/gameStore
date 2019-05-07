@@ -100,14 +100,19 @@ $(document).ready(function(){
             $(cloned).find(".side-img").html(img);
             cloned.appendTo(".col-md-2");
         }
+        if(Number(localStorage.getItem("sumPrice"))!=0){
+            $("#sumPrice").text(localStorage.getItem(("sumPrice")));
+        }
     }
 
-    $(".news").click(function(){
+    $(".btn-order").click(function(){
         window.location.href='http://localhost:63342/GamesStore/OrderMenu/Order.html?_ijt=dsd1p1gpmdg63i61s557g10s59';
-        var price = Number($("#sumPrice").text());
-        localStorage.setItem("sumPrice", price);
-        alert(price);
     });
+
+    $(".news").click(function(){
+        window.location.href='http://localhost:63342/GamesStore/Гайм%20шоп/News.html?_ijt=8glf1bpju3hm35efnm60e625o6';
+    });
+
 
     $(".btn-pc").click(function(){
         var name = $(this).parent().parent().find(".name").text();
@@ -127,7 +132,7 @@ $(document).ready(function(){
             var prev = Number($("#sumPrice").text());
             prev += price;
             $("#sumPrice").text(prev);
-            alert(localStorage.getItem(name));
+            localStorage.setItem("sumPrice", prev);
 
     });
 
@@ -149,10 +154,14 @@ $(document).ready(function(){
         var prev = Number($("#sumPrice").text());
         prev += price;
         $("#sumPrice").text(prev);
-        alert(localStorage.getItem(name));
+        localStorage.setItem("sumPrice", prev);
     });
 
     $(".plus").click(function () {
+        var name = $(this).parent().find(".rname").text();
+        var currentAmount = Number(localStorage.getItem(name));
+        currentAmount++;
+        localStorage.setItem(name, currentAmount);
         var price = Number($(this).parent().find(".rprice").text());
         var i = $(this).parent().find(".inp").val();
         i++;
@@ -160,9 +169,14 @@ $(document).ready(function(){
         var prev = Number($("#sumPrice").text());
         prev+=price;
         $("#sumPrice").text(prev);
+        localStorage.setItem("sumPrice", prev);
     });
 
     $(".minus").click(function(){
+        var name = $(this).parent().find(".rname").text();
+        var currentAmount = Number(localStorage.getItem(name));
+        currentAmount--;
+        localStorage.setItem(name, currentAmount);
         var i = $(this).parent().find(".inp").val();
         if(i==1)
             alert("Ви не можете зменшити кількість до нуля");
@@ -173,10 +187,13 @@ $(document).ready(function(){
             var prev = Number($("#sumPrice").text());
             prev-=price;
             $("#sumPrice").text(prev);
+            localStorage.setItem("sumPrice", prev);
         }
     });
 
     $(".remove").click(function(){
+        var name = $(this).parent().find(".rname").text();
+        localStorage.setItem(name, 0);
         var amount = $(this).parent().find(".inp").val();
         var price = Number($(this).parent().find(".rprice").text());
         var res = amount*price;
@@ -184,5 +201,6 @@ $(document).ready(function(){
         prev-=res;
         $(this).parent().remove();
         $("#sumPrice").text(prev);
+        localStorage.setItem("sumPrice", prev);
     })
 });
