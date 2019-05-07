@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>My Page</title>
     <link rel="stylesheet" type="text/css" href="order.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
     <script src="Order.js"></script>
 
@@ -13,11 +14,47 @@
 
     <div class="orderScreen" id="screen">
         <div id="leftSide">
-            adsadgfsgfshfh
+            <div class="column">
+
+            </div>
+            <div class="column">
+                <div class="textMain">Введіть ім'я</div>
+                <input class="yourText" id="inputName" placeholder="Андрій">
+                <span class="hint" id="name">*введіть ім'я без цифр та знаків</span>
+            </div>
+
+            <div class="column">
+                <div class="textMain">Введіть ім'я</div>
+                <input class="yourText" id="inputName2" placeholder="Андрій">
+                <span class="hint" id="name2">*введіть фамілію без цифр та знаків</span>
+            </div>
+
+            <div class="column">
+
+            </div>
+
+            <div class="column">
+
+            </div>
         </div>
 
         <div id="rightSide">
-            dgsdtdhtff
+
+            <div class = "bin-2">
+                <div id = "toBeCloned" class = bin-item>
+                    <div class = "side-img">
+                        <img src="game_1.jpg">
+                    </div>
+                    <p class = rname>DMC 5</p>
+                    <span class="rprice" ></span>
+                    грн
+                    <button class = minus>-</button>
+                    <input class = inp value = "1">
+                    <button class = "plus">+</button>
+                    <button class = "remove">X</button>
+                </div>
+            </div>
+
         </div>
 
 
@@ -25,16 +62,22 @@
         <div   id="clock">
             <span>00:00:00</span>
         </div>
+
+
         <div id="calendar">
 
 
             <div class="fullCalend">
-            <div id="calendar2"></div>
+                <div id="calendar2"></div>
                 <button class="buttonLeft"> < </button>
                 <button class="buttonRight"> > </button>
             </div>
         </div>
-        </div>
+    </div>
+    <div id="help">
+
+    </div>
+
 
     </div>
 
